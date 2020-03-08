@@ -8,9 +8,18 @@ class User{
       photoLoc: "assets/avatars/4.jfif"
     )
   ];
+  List<TodoItem> _todoItems = [
+    TodoItem(
+      time: "5:30 PM",
+      day: "Today",
+      note: "Yoga and Meditation for Beginners",
+    )
+  ];
 
   String get photo => _photo;
   int get notificationCount => _notificationCount;
+  List<Member> get members => _members;
+  List<TodoItem> get todoItems => _todoItems;
 }
 
 
@@ -18,9 +27,13 @@ class TodoItem{
   String time;
   String day;
   String note;
-  List<String> members = [];
+  List<Member> members = [];
 
   TodoItem({this.time, this.day, this.note, this.members});
+
+  String getTime(){
+    return "$day $time".toUpperCase();
+  }
 }
 
 class Member{
