@@ -24,20 +24,28 @@ class _HomeState extends State<Home> with TickerProviderStateMixin{
     dimens = Dimens(context);
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.add, color: Colors.black, size: 38,),backgroundColor: Colors.white,
+      ),
       body: SafeArea(
         child: Container(
           height: dimens.height,
           color: greyColor,
           child: Stack(
             children: <Widget>[
-
-              itemSegmentWidget(context: context, heightFactor: 0.4,
-              color: pinkColor,
-                item: user.todoItems[0]
+              itemSegmentWidget(context: context, heightFactor: 0.92,
+                  color: darkPurpleColor,
+                  item: user.todoItems[2]
               ),
-
-
-//              customAppBar(user: user, dimens: dimens),
+              itemSegmentWidget(context: context, heightFactor: 0.67,
+              color: purpleColor,
+                item: user.todoItems[1]
+              ),
+              itemSegmentWidget(context: context, heightFactor: 0.42,
+                color: pinkColor,
+                item: user.todoItems[0],
+              ),
             CustomAppBar()
             ],
           ),
